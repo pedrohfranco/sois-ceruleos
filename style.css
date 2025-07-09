@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #d6d5e3;
+}
+
+header {
+  background-color: #0f0c26;
+  padding: 1rem;
+  text-align: center;
+}
+
+.main-heading, .main-subheading {
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+}
+
+.main-heading {
+  color:  	 	#c9cbdf
+}
+
+.main-subheading {
+  color: #97a5ca
+}
+
+.work-in-progress {
+  max-width: 40%;
+  height: auto;
+}
