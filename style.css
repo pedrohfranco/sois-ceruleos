@@ -30,9 +30,10 @@ header {
 }
 
 .nav-link {
+  font-family: "Jost", sans-serif;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
   color: #d6d5e3;
 }
 
@@ -69,4 +70,78 @@ h2 {
 .work-in-progress {
   max-width: 40%;
   height: auto;
+}
+
+summary {
+  font-family: "Jost", sans-serif;
+}
+
+.sector-detailing {
+  padding: 0.2rem;
+  box-sizing: border-box;
+  border: 1px solid #191342;
+  border-radius: 5px;
+  font-weight: 500;
+
+  transition: max-height 0.8s ease-in-out;
+  overflow: hidden;
+
+}
+
+.sector-detailing:not([open]) {
+  max-height: 3rem;
+}
+
+.sector-detailing[open] {
+  max-height: 100rem;
+}
+
+.sector-summary {
+  list-style: none;
+  background-color: #191342;
+  color: #c9cbdf;
+  border-radius: 5px;
+  padding: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.5s ease;
+}
+
+.sector-summary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #2e0d49 45%, #690936 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+.sector-summary:hover {
+  cursor: pointer;
+}
+
+.sector-summary:hover::before {
+  opacity: 1;
+}
+
+.chapter-detailing {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+
+  & summary {
+    list-style: none;
+  }
+
+}
+
+.structure-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem
 }
