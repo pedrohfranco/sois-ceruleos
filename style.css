@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+
+/* Geral - Todo o documento */
 * {
   margin: 0;
   padding: 0;
@@ -12,20 +14,71 @@ body {
   background-color: #d6d5e3;
 }
 
+/* Header */
+
 header {
   background-color: #0f0c26;
-  padding: 1rem;
+  padding-top: 1rem;
   text-align: center;
 }
 
+.main-heading, .main-subheading, h2 {
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+}
+
+.main-heading {
+  color:  	 	#c9cbdf
+}
+
+.main-subheading {
+  color: #97a5ca;
+  margin-bottom: 1rem
+}
+
+.hamburger-btn {
+  position: absolute;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: transparent;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  transition: height 0.2s;
+}
+
+.hamburger-btn.open {
+  height: 2.5rem
+}
+
+.hamburger-btn span {
+  width: 2rem;
+  height: 0.25rem;
+  background: #d6d5e3;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
 .navbar {
+  display: flex;
   padding: 1rem;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
   background-color: #191342;
 }
 
 .navbar-nav {
   display: flex;
   justify-content: space-evenly;
+  gap: 1.5rem;
   list-style: none;
 }
 
@@ -36,6 +89,77 @@ header {
   font-weight: 500;
   color: #d6d5e3;
 }
+
+/* Barra Lateral (Sidebar) */
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: #191342;
+  overflow-x: hidden;
+  transition: transform 0.4s ease-in-out;
+  transform: translateX(-100%); /* Começa fora da tela */
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  transform: translateX(0); /* Entra na tela */
+}
+
+.sidebar-link {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-family: "Jost", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #c9cbdf;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar-link:hover {
+  color: #fff;
+  background-color: #2e0d49;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 36px;
+  color: #c9cbdf;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Fundo Escurecido (Overlay) */
+.overlay {
+  display: none; /* Começa escondido */
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+
+/* Main */
 
 main {
   padding: 1rem;
@@ -48,28 +172,15 @@ p {
   margin: 1rem 1rem;
 }
 
-.main-heading, .main-subheading, h2 {
-  font-family: "Jost", sans-serif;
-  font-weight: 600;
-}
-
 h2 {
   text-transform: uppercase;
   line-height: 100%;
 }
 
-.main-heading {
-  color:  	 	#c9cbdf
-}
-
-.main-subheading {
-  color: #97a5ca;
-  margin-bottom: 1rem
-}
-
-.work-in-progress {
-  max-width: 40%;
-  height: auto;
+.structure-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem
 }
 
 summary {
@@ -140,8 +251,7 @@ summary {
 
 }
 
-.structure-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem
+.work-in-progress {
+  max-width: 40%;
+  height: auto;
 }

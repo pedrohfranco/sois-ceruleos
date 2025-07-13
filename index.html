@@ -10,13 +10,28 @@
   <title>O'vask - Sóis Cerúleos</title>
 </head>
 <body>
-  <header>
-    <h1 class="main-heading">CÓDICE LICÍACO</h1>
-    <div class="main-subheading">Uma enciclopédia sobre o mundo de O'vask</div>
-    <div class="nav-container">
-      <button class="sections-dropdown"></button>
+  <div class="overlay" id="overlay"></div>
 
+  <nav class="sidebar" id="sidebar">
+    <button class="close-btn" id="close-btn" title="Fechar menu">&times;</button>
+    <a href="#introduction" class="sidebar-link">Início</a>
+    <a href="#structure" class="sidebar-link">Estrutura do Códice</a>
+    <a href="#chronology" class="sidebar-link">Cronologia</a>
+  </nav>
+
+  <header>
+    <div class="headings">
+      <h1 class="main-heading">CÓDICE LICÍACO</h1>
+      <div class="main-subheading">Uma enciclopédia sobre o mundo de O'vask</div>
+    </div>
+    <div class="nav-container">
       <nav class="navbar">
+        <button class="hamburger-btn" id="hamburger-btn" title="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         <ul class="navbar-nav">
           <li class="nav-item">
             <a href="#introduction" class="nav-link">Início</a>
@@ -162,6 +177,8 @@
   </main>
 
   <footer>&copy Direitos reservados? Não sei. Faz o que você quiser com a informação que encontrar por aqui. Só não vende.</footer>
+
+  <script src="scripts.js"></script>
 
 </body>
 </html>
