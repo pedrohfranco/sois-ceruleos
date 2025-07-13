@@ -68,18 +68,15 @@ summary {
   font-family: "Jost", sans-serif;
 }
 
+
 .sector-detailing {
-  padding: 0.2rem;
   box-sizing: border-box;
   border: 1px solid #191342;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: 500;
-  overflow: hidden;
 }
 
-.sector-detailing:not([open]) .details-content{
-  height: 0;
-}
+/* Animação do gradiente ao selecionar o setor */
 
 .sector-summary {
   list-style: none;
@@ -90,7 +87,6 @@ summary {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: color 0.5s ease;
 }
 
 .sector-summary::before {
@@ -114,15 +110,50 @@ summary {
   opacity: 1;
 }
 
+.details-collapsing {
+  overflow: hidden
+}
+
+.details-collapsing:not([open]) .details-content {
+  height: 0
+}
+
+.details-content {
+  margin: 0;
+  padding: 1em 0.5em 1em 0.5em
+}
+
 .chapter-detailing {
-  display: flex;
-  flex-direction: column;
-  margin: 1em;
+  margin-left: 0.5em;
 
   & summary {
     list-style: none;
-  }
+  };
 
+}
+
+.chapter-detailing summary {
+  display: inline-flex;
+  padding: 0 0.5em 0 0.5em;
+  border-radius: 5px;
+  transition:
+    background-color 0.4s,
+    color 0.4s,
+    padding 0.2s ease-in-out;
+
+}
+
+.chapter-detailing summary:hover {
+  background-color: #bbb9c9;
+  color: #191342;
+  padding: 0.2rem;
+  cursor: pointer
+}
+
+.chapter-detailing .details-content {
+  border: 1px solid #bbb9c9;
+  border-radius: 5px;
+  padding: 1em 0.5em 1em 0.5em
 }
 
 .work-in-progress {
