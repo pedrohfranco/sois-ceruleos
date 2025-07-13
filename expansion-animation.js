@@ -9,7 +9,8 @@ allDetails.forEach((details) => {
     if (details.open) {
       const openAnimation = content.animate(
         { height: [`${content.offsetHeight}px`, '0px'],
-          padding: ['1em 0.5em 1em 0.5em', '0 0.5em 0 0.5em']
+          padding: ['1em 0.5em 1em 0.5em', '0 0.5em 0 0.5em'],
+          gap: ['0.5em', '0']
          },
         { duration: 400, easing: 'ease-in-out' }
       );
@@ -21,7 +22,8 @@ allDetails.forEach((details) => {
       details.setAttribute('open', '');
       content.animate(
         { height: ['0px', `${content.scrollHeight}px`],
-          padding: ['0 0.5em 0 0.5em', '1em 0.5em 1em 0.5em']
+          padding: ['0 0.5em 0 0.5em', '1em 0.5em 1em 0.5em'],
+          gap: ['0', '0.5em']
          },
         { duration: 400, easing: 'ease-in-out' }
       );

@@ -119,8 +119,11 @@ summary {
 }
 
 .details-content {
+  display: flex;
+  flex-direction: column;
   margin: 0;
-  padding: 1em 0.5em 1em 0.5em
+  padding: 1em 0.5em 1em 0.5em;
+  gap: 0.5em;
 }
 
 .chapter-detailing {
@@ -143,6 +146,12 @@ summary {
 
 }
 
+.chapter-detailing[open] summary {
+  background-color: #bbb9c9;
+  color: #191342;
+  padding: 0.2rem;
+}
+
 .chapter-detailing summary:hover {
   background-color: #bbb9c9;
   color: #191342;
@@ -153,7 +162,6 @@ summary {
 .chapter-detailing .details-content {
   border: 1px solid #bbb9c9;
   border-radius: 5px;
-  padding: 1em 0.5em 1em 0.5em
 }
 
 .work-in-progress {
